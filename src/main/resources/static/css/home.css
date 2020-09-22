@@ -738,27 +738,20 @@ section.slider-sec h2 {
 	.slide-item {
 		background: #ffffff;
 		width: 85%;
-		height: 65vh;
-		-webkit-margin-start: 100px;
-	}
-
-	.slide-item {
-		background: #ffffff;
-		width: 85%;
-		height: 45vh;
+		height: 70vh;
 		-webkit-margin-start: 30px;
 	}
 
 	.main-footer {
-		height: 140vh;
+		height: 130vh;
 	}
 
 	.container-body {
-		height: 140vh;
+		height: 130vh;
 	}
 
 	.footer {
-		height: 15vh;
+		height: 25vh;
 		display: grid;
 		font-size: 13px;
 	}
