@@ -737,9 +737,9 @@ section.slider-sec h2 {
 
 	.slide-item {
 		background: #ffffff;
+		margin: 0 auto;
 		width: 85%;
 		height: 65vh;
-		-webkit-margin-start: 10px;
 	}
 
 	.main-footer {
@@ -748,6 +748,10 @@ section.slider-sec h2 {
 
 	.container-body {
 		height: 130vh;
+	}
+
+	.container-footer {
+		height: 15vh;
 	}
 
 	.footer {
@@ -782,10 +786,6 @@ section.slider-sec h2 {
 	.colum2,
 	.colum3 {
 		margin-top: 7px;
-	}
-	
-	.container-footer {
-		height: 15vh;
 	}
 
 	.footer {
