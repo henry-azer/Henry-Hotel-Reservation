@@ -890,7 +890,7 @@ section.slider-sec h2 {
 }
 
 @media only screen and (max-width: 650px) {
-	
+
 	.nav-wrapper {
 		width: 100%;
 	}
@@ -975,7 +975,7 @@ section.slider-sec h2 {
 		padding: 15%;
 
 	}
-	
+
 	.container-footer {
 		height: 15vh;
 	}
@@ -986,78 +986,79 @@ section.slider-sec h2 {
 		margin: auto;
 		font-size: 15px;
 	}
+}
 
-	@media only screen and (max-width: 400px) {
-		.nav-wrapper {
-			width: 100%;
-		}
+@media only screen and (max-width: 400px) {
+	.nav-wrapper {
+		width: 100%;
+	}
 
-		.cover-main {
-			width: 105%;
-			height: 110vh;
-		}
+	.cover-main {
+		width: 105%;
+		height: 110vh;
+	}
 
-		.slide-item {
-			background: #ffffff;
-			width: 85%;
-			height: 90vh;
-			-webkit-margin-start: 30px;
-		}
+	.slide-item {
+		background: #ffffff;
+		width: 85%;
+		height: 90vh;
+		-webkit-margin-start: 30px;
+	}
 
-		.slide-item h3 {
-			color: #000000;
-		}
+	.slide-item h3 {
+		color: #000000;
+	}
 
-		.slide-item img {
-			position: center;
-			padding: 20px;
-			height: 300px;
-			color: white;
-			filter: grayscale(70%);
-		}
+	.slide-item img {
+		position: center;
+		padding: 20px;
+		height: 300px;
+		color: white;
+		filter: grayscale(70%);
+	}
 
-		.main-footer {
-			height: 140vh;
-		}
+	.main-footer {
+		height: 140vh;
+	}
 
-		.container-body {
-			height: 140vh;
-		}
+	.container-body {
+		height: 140vh;
+	}
 
-		.footer {
-			height: 15vh;
-			display: grid;
-			font-size: 13px;
-		}
+	.footer {
+		height: 15vh;
+		display: grid;
+		font-size: 13px;
+	}
+
+}
+
+@media only screen and (min-width: 300px) and (max-width:350px) {
+
+	.nav-wrapper {
+		width: 100%;
+	}
+
+	.main-footer {
+		height: 175vh;
+	}
+
+	.slide-item {
+		background: #ffffff;
+		width: 85%;
+		height: 110vh;
+		-webkit-margin-start: 30px;
 
 	}
 
-	@media only screen and (min-width: 300px) and (max-width:350px) {
+	.container-body {
+		height: 175vh;
+	}
 
-		.nav-wrapper {
-			width: 100%;
-		}
-
-		.main-footer {
-			height: 175vh;
-		}
-
-		.slide-item {
-			background: #ffffff;
-			width: 85%;
-			height: 110vh;
-			-webkit-margin-start: 30px;
-
-		}
-
-		.container-body {
-			height: 175vh;
-		}
-
-		.footer {
-			height: 16vh;
-		}
+	.footer {
+		height: 16vh;
 	}
 }
+
 
 /* RESPONSIVE MENU END */
