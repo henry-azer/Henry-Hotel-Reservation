@@ -99,7 +99,7 @@ public class User {
 
 	public void setRoles(Collection<Role> roles) {
 		Collection<Role> roles1 = new ArrayList<>();
-		roles1.add(new Role("EMPLOYEE"));
+		roles1.add(new Role("ROLE_EMPLOYEE"));
 		
 		this.roles = roles1;
 	}
