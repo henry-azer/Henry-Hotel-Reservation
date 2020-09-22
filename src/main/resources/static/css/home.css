@@ -277,7 +277,8 @@ header .logo img {
 		url('../images/header/wallpaper.jpg') center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 70vh;
+	height: 75vh;
+	width: 100%;
 }
 
 ul#scene li.name {
@@ -367,10 +368,10 @@ h2.sub-title {
 
 h2.sub-title::after {
 	display: block;
-	height: 2px;
+	height: 1px;
 	background-color: #000000;
 	content: "";
-	width: 100px;
+	width: 7%;
 	margin: 30px auto 0 auto;
 }
 
@@ -392,15 +393,14 @@ h2.sub-title::after {
 }
 
 .slide-item {
-	margin-bottom: 50px;
 	background: #ffffff;
 	overflow: hidden;
-	width: 500px;
-	height: 500px;
-	margin-bottom: 80px;
-	float: left;
+	width: 32%;
+	height: 62vh;
+	margin-bottom: 100px;
 	vertical-align: top;
-	-webkit-margin-start: 230px;
+	float: left;
+	-webkit-margin-start: 200px;
 }
 
 .slide-item h3 {
@@ -566,16 +566,16 @@ section.slider-sec h2 {
 }
 
 .container-body {
-	max-width: 1200px;
-	height: 330px;
+	max-width: 100%;
+	height: 37vh;
 	margin: auto;
 	display: flex;
-	justify-content: space-between;
-	padding: 50px;
+	padding-top: 30px;
+	justify-content: space-evenly;
 }
 
 .colum1 {
-	max-width: 400px;
+	max-width: 400%;
 }
 
 .colum1 img {
@@ -669,17 +669,18 @@ section.slider-sec h2 {
 }
 
 .footer {
-	max-width: 1200px;
-	height: 50px;
+	max-width: 65%;
+	height: 45px;
 	margin: auto;
-	display: flex;
 	justify-content: space-between;
-	padding: 20px;
+	display: flex;
+	padding: 17px;
 	font-size: 14px;
 }
 
 .copyright {
 	color: #C7C7C7;
+	padding-bottom: 5px;
 }
 
 .copyright a {
@@ -691,6 +692,7 @@ section.slider-sec h2 {
 .information a {
 	text-decoration: none;
 	color: #C7C7C7;
+	padding-bottom: 10px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -730,6 +732,9 @@ section.slider-sec h2 {
 /* SCROLL BAR END */
 
 /* RESPONSIVE MENU START */
+
+@media screen and (min-width:1px) and (max-width:1365px) {}
+
 @media only screen and (max-width: 1160px) {
 	section.beating-heart span {
 		font-size: 30px;
@@ -750,10 +755,47 @@ section.slider-sec h2 {
 	}
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.cover-main {
+		width: 105%;
+		height: 50vh;
+	}
+
+	.slide-item {
+		background: #ffffff;
+		width: 85%;
+		height: 45vh;
+		-webkit-margin-start: 175px;
+	}
+
+	.main-footer {
+		height: 25vh;
+	}
+
+	.container-body {
+		height: 25vh;
+	}
+
+	.colum2,
+	.colum3 {
+		margin-top: 7px;
+	}
+
+	.footer {
+		max-width: 100%;
+		height: 5vh;
+		margin: auto;
+		font-size: 15px;
+	}
+
+}
+
 @media only screen and (max-width: 768px) {
+
 	.menu-trigger {
 		background: url('../images/menu-icon.svg') no-repeat center/cover;
-		width: 35px;
+		width: 30px;
 		height: 35px;
 		display: block;
 		z-index: 10;
@@ -792,7 +834,7 @@ section.slider-sec h2 {
 		left: 0;
 		background: #131313;
 		width: 100%;
-		max-width: 300px;
+		max-width: px;
 		z-index: 30;
 		-webkit-transform: translate3d(-100%, 0, 0);
 		transform: translate3d(-100%, 0, 0);
@@ -831,13 +873,6 @@ section.slider-sec h2 {
 		display: none;
 	}
 
-	.slide-item {
-		max-width: 450px;
-		margin-left: 170px;
-		position: relative;
-		padding: 7px 0;
-		vertical-align: top;
-	}
 }
 
 @media only screen and (max-width: 650px) {
@@ -913,31 +948,85 @@ section.slider-sec h2 {
 		filter: grayscale(0);
 	}
 
-	.footer {
-		height: 80px;
+	.main-footer {
+		height: 130vh;
 	}
 
 	.container-body {
-		height: 900px;
-		padding: 50px;
+		padding: 15%;
 	}
 
-	.copyright {
-		margin-top: 3px;
+	.footer {
+		max-width: 100%;
+		height: 10vh;
+		margin: auto;
+		font-size: 15px;
 	}
 
-	.colum1 {
-		margin-left: 145px;
+	@media only screen and (max-width: 400px) {
+
+		.cover-main {
+			width: 105%;
+			height: 110vh;
+		}
+
+		.slide-item {
+			background: #ffffff;
+			width: 85%;
+			height: 90vh;
+			-webkit-margin-start: 30px;
+
+		}
+
+		.slide-item h3 {
+			color: #000000;
+		}
+
+		.slide-item img {
+			position: center;
+			padding: 20px;
+			height: 300px;
+			color: white;
+			filter: grayscale(70%);
+		}
+
+		.main-footer {
+			height: 140vh;
+		}
+
+		.container-body {
+			height: 140vh;
+		}
+
+		.footer {
+			height: 15vh;
+			display: grid;
+			font-size: 13px;
+		}
+
 	}
 
-	.colum2 {
-		margin-left: 80px;
-		margin-top: 80px;
-	}
+	@media only screen and (min-width: 300px) and (max-width:350px) {
 
-	.colum3 {
-		margin-top: 50px;
-		margin-left: 75px;
+		.main-footer {
+			height: 175vh;
+		}
+
+		.slide-item {
+			background: #ffffff;
+			width: 85%;
+			height: 110vh;
+			-webkit-margin-start: 30px;
+
+		}
+
+		.container-body {
+			height: 175vh;
+		}
+
+		.footer {
+			height: 16vh;
+		}
 	}
 }
 
