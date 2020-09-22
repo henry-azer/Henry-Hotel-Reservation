@@ -33,7 +33,7 @@ public class Role {
 	// Role getters and setters fields
 	
 	public Long getId() {
-		return 1;
+		return (long) 1;
 	}
 
 	public void setId(Long id) {
