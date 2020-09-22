@@ -738,8 +738,8 @@ section.slider-sec h2 {
 	.slide-item {
 		background: #ffffff;
 		width: 85%;
-		height: 70vh;
-		-webkit-margin-start: 30px;
+		height: 65vh;
+		-webkit-margin-start: 10px;
 	}
 
 	.main-footer {
@@ -751,7 +751,7 @@ section.slider-sec h2 {
 	}
 
 	.footer {
-		height: 25vh;
+		height: 30vh;
 		display: grid;
 		font-size: 13px;
 	}
@@ -787,7 +787,7 @@ section.slider-sec h2 {
 
 	.footer {
 		max-width: 100%;
-		height: 5vh;
+		height: 15vh;
 		margin: auto;
 		font-size: 15px;
 	}
