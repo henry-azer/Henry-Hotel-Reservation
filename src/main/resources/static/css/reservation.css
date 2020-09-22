@@ -496,33 +496,21 @@ h3 {
 /* RESPONSIVE MENU START */
 
 @media screen and (max-width: 1100px) {
-
-	.main-footer {
-		height: 130vh;
-	}
-
 	.container-body {
-		height: 130vh;
+		flex-wrap: wrap;
 	}
 
-	.container-footer {
-		height: 12vh;
+	.colum1 {
+		max-width: 100%;
 	}
 
-	.footer {
-		height: 30vh;
-		display: grid;
-		font-size: 13px;
+	.colum2,
+	.colum3 {
+		margin-top: 40px;
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	
-	.cover-main {
-		width: 105%;
-		height: 50vh;
-	}
-
 	.menu-trigger {
 		background: url('../images/menu-icon.svg') no-repeat center/cover;
 		width: 35px;
@@ -602,26 +590,6 @@ h3 {
 	body.menu-is-active .menu-trigger {
 		display: none;
 	}
-
-	.main-footer {
-		height: 25vh;
-	}
-
-	.container-body {
-		height: 25vh;
-	}
-
-	.colum2,
-	.colum3 {
-		margin-top: 7px;
-	}
-
-	.footer {
-		max-width: 100%;
-		height: 15vh;
-		margin: auto;
-		font-size: 15px;
-	}
 }
 
 @media only screen and (max-width: 650px) {
@@ -648,20 +616,31 @@ h3 {
 		max-width: 150px;
 	}
 
-	.container-body {
-		padding: 15%;
-
-	}
-	
-	.container-footer {
-		height: 15vh;
-	}
-
 	.footer {
-		max-width: 100%;
-		height: 10vh;
-		margin: auto;
-		font-size: 15px;
+		height: 80px;
+	}
+
+	.container-body {
+		height: 1000px;
+		padding: 50px;
+	}
+
+	.copyright {
+		margin-top: 3px;
+	}
+
+	.colum1 {
+		margin-left: 125px;
+	}
+
+	.colum2 {
+		margin-left: 80px;
+		margin-top: 80px;
+	}
+
+	.colum3 {
+		margin-top: 50px;
+		margin-left: 75px;
 	}
 
 	h2.sub-title {
@@ -706,53 +685,6 @@ h3 {
 		background: rgb(7, 49, 7);
 		color: white;
 		text-decoration: none;
-	}
-
-
-}
-
-@media only screen and (max-width: 400px) {
-	.nav-wrapper {
-		width: 100%;
-	}
-
-	.cover-main {
-		width: 105%;
-		height: 110vh;
-	}
-
-	.main-footer {
-		height: 140vh;
-	}
-
-	.container-body {
-		height: 140vh;
-	}
-
-	.footer {
-		height: 15vh;
-		display: grid;
-		font-size: 13px;
-	}
-
-}
-
-@media only screen and (min-width: 300px) and (max-width:350px) {
-
-	.nav-wrapper {
-		width: 100%;
-	}
-
-	.main-footer {
-		height: 175vh;
-	}
-
-	.container-body {
-		height: 175vh;
-	}
-
-	.footer {
-		height: 16vh;
 	}
 }
 
