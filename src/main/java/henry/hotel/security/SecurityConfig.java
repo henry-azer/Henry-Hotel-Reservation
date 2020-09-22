@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http
 		.authorizeRequests()
+		.antMatchers("/login-form-page").permitAll()
 		.antMatchers("/").hasRole("EMPLOYEE")
 		.antMatchers("/new-reservation").hasRole("EMPLOYEE")
 		.antMatchers("/your-reservations").hasRole("EMPLOYEE")
