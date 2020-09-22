@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "`user`")
 public class User {
 
 	// User fields and annotate with it's column to connect to jpa entity manager
