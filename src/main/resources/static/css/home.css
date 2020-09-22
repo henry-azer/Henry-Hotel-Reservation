@@ -737,9 +737,8 @@ section.slider-sec h2 {
 
 	.slide-item {
 		background: #ffffff;
-		width: 70%;
+		width: 85%;
 		height: 65vh;
-		vertical-align: top;
 	}
 
 	.main-footer {
@@ -763,6 +762,10 @@ section.slider-sec h2 {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.nav-wrapper {
+		width: 100%;
+	}
 
 	.cover-main {
 		width: 105%;
@@ -798,6 +801,10 @@ section.slider-sec h2 {
 }
 
 @media only screen and (max-width: 768px) {
+
+	.nav-wrapper {
+		width: 100%;
+	}
 
 	.menu-trigger {
 		background: url('../images/menu-icon.svg') no-repeat center/cover;
@@ -882,6 +889,11 @@ section.slider-sec h2 {
 }
 
 @media only screen and (max-width: 650px) {
+	
+	.nav-wrapper {
+		width: 100%;
+	}
+
 	ul#scene li.name {
 		font-size: 22px;
 		line-height: 27px;
@@ -975,6 +987,9 @@ section.slider-sec h2 {
 	}
 
 	@media only screen and (max-width: 400px) {
+		.nav-wrapper {
+			width: 100%;
+		}
 
 		.cover-main {
 			width: 105%;
@@ -1017,6 +1032,10 @@ section.slider-sec h2 {
 	}
 
 	@media only screen and (min-width: 300px) and (max-width:350px) {
+
+		.nav-wrapper {
+			width: 100%;
+		}
 
 		.main-footer {
 			height: 175vh;
