@@ -93,15 +93,15 @@ public class User {
 		this.email = email;
 	}
 
-	public Collection<Role> getRoles() {
-		Collection<Role> roles = new ArrayList<>();
-		roles.add(new Role("EMPLOYEE"));
-		
+	public Collection<Role> getRoles() {		
 		return roles;
 	}
 
 	public void setRoles(Collection<Role> roles) {
-		this.roles = roles;
+		Collection<Role> roles1 = new ArrayList<>();
+		roles1.add(new Role("EMPLOYEE"));
+		
+		this.roles = roles1;
 	}
 	
 	public Collection<Reservation> getReservations() {
