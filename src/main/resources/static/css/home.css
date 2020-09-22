@@ -733,8 +733,6 @@ section.slider-sec h2 {
 
 /* RESPONSIVE MENU START */
 
-@media screen and (min-width:1px) and (max-width:1365px) {}
-
 @media only screen and (max-width: 1160px) {
 	section.beating-heart span {
 		font-size: 30px;
@@ -755,7 +753,7 @@ section.slider-sec h2 {
 	}
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) {
 
 	.cover-main {
 		width: 105%;
@@ -770,11 +768,11 @@ section.slider-sec h2 {
 	}
 
 	.main-footer {
-		height: 25vh;
+		height: 32vh;
 	}
 
 	.container-body {
-		height: 25vh;
+		height: 32vh;
 	}
 
 	.colum2,
@@ -784,7 +782,7 @@ section.slider-sec h2 {
 
 	.footer {
 		max-width: 100%;
-		height: 5vh;
+		height: 7vh;
 		margin: auto;
 		font-size: 15px;
 	}
