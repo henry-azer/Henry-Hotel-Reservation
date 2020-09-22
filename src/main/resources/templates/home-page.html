@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Reference Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Reference Bootstrap and local files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" th:href="@{css/slick.css}">
+	<link rel="stylesheet" th:href="@{css/slick-theme.css}">
+	<link rel="stylesheet" th:href="@{css/home.css}">
+	<link rel="icon" th:href="@{images/header/white-logo.png}">
+
+	<title>Hotel Reservation</title>
+</head>
+
+<body>
+
+	<div class="main-overlay js-main-overlay"></div>
+
+	<!-- Main Cover Section -->
+	<section class="cover-main" id="home">
+		<header>
+			<nav class="nav-wrapper">
+				<div class="logo">
+					<a href="#"> <img src="images/header/white-logo.png" class="logo">
+					</a>
+				</div>
+
+				<!-- Menu bar -->
+				<ul class="menu">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#work">Rooms</a></li>
+					<li><a href="#about">Services</a></li>
+					<li><a href="#slider">Review</a></li>
+					<li><a href="#footer">About Me</a></li>
+				</ul>
+			</nav>
+			<div class="menu-trigger js-menu-trigger"></div>
+		</header>
+
+		<!-- Main buttons and title -->
+		<div class="wrapper">
+			<ul id="scene" data-invert-x="false" data-invert-y="false" data-scalar-x="7" data-scalar-y="7"
+				data-friction-x="0.1" data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
+				<li class="layer name" data-depth="0.90">HOTEL RESERVATION</li>
+				<li class="layer title" data-depth="0.50">Book Online Now !</li>
+				<li class="layer btn btn-main" data-depth="0.30"><a th:href="@{/new-reservation}"
+						class="reservation-btn">New
+						Reservation</a> <a th:href="@{/your-reservations}" class="reservations-btn">Your
+						Reservations</a> <br> <a th:href="@{/logout}" class="logout-btn">Sign
+						Out</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!--Room Cards Section -->
+	<section class="section-padding" id="work">
+		<h2 class="sub-title">Hotel Rooms and Suites</h2>
+		<div class="container-rooms">
+			<div class="row-room">
+
+				<!-- Single room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Single Room:</h3>
+							<img src="images/rooms/single.jpg">
+
+							<p>
+								Single Room <br> with free breakfast for one person or two
+								start from $500 for night up to $1999.
+							</p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Double room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Double Room:</h3>
+							<img src="images/rooms/family.jpg">
+
+							<p>
+								Double Room <br> with free breakfast for three persons or
+								four start from $1000 for night up to $2999.
+							</p>
+
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Family room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Family Room:</h3>
+							<img src="images/rooms/double.jpg">
+
+							<p>
+								Family Room <br> with free breakfast for four persons or
+								five start from $1300 for night up to $3299.
+							</p>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Honeymoon room card -->
+				<div class="col-md-4 col-sm-6">
+					<div class="col-xs-12 fix_p_r">
+						<div class="slide-item card" style="padding: 10px;">
+							<h3>Honeymoon Suite:</h3>
+							<img src="images/rooms/suite.jpg">
+
+							<p>
+								Honeymoon Suite <br> with breakfast and ready for any
+								surprises and customized equipment and start from $1000 for
+								night up to $4999.
+							</p>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section class="services-sec" id="about">
+		<div class="wrapper">
+			<h2 class="sub-title">OUR FACILITIES AND SERVICES</h2>
+
+			<!-- room services and breakfast (up row) -->
+			<section class="tm-service-section">
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/bell.png">
+					<div>
+						<p class="b">Room Service</p>
+						<p>Enjoy your stay with excellent and timely room service</p>
+					</div>
+				</div>
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/coffee.png">
+					<div>
+						<p class="b">Free Breakfast</p>
+						<p>Enjoy Free breakfast every morning</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- parking services and spa (down row) -->
+			<section class="tm-service-section">
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/car-front.jpg">
+					<div>
+						<p class="b">Free Parking</p>
+						<p>No need to pay any extra charges to park your vehicle</p>
+					</div>
+				</div>
+
+				<div class="tm-service">
+					<img class="tm-ser-image" src="images/service/spa.png">
+					<div>
+						<p class="b">Free Spa</p>
+						<p>Relax at the inhouse Spa once every day of your stay</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+
+	<!-- Slider Section -->
+	<div class="slider-div" id="slider">
+		<h2 class="sub-title">Hotel Review</h2>
+		<div class="slider">
+			<!-- slide collection images -->
+			<div class="slide">
+				<img src="images/slide/one.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/two.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/three.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/four.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/five.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/six.jpg" alt="" class="img-responsive" />
+			</div>
+			<div class="slide">
+				<img src="images/slide/seven.jpg" alt="" class="img-responsive" />
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="main-footer">
+
+		<div class="container-body">
+
+			<!-- Footer Column one (information) -->
+			<div class="colum1">
+				<h1>About Me</h1>
+				<p>HENRY AZER</p>
+				<img class="me-image" alt="" src="/images/footer/me.jpg" />
+
+			</div>
+
+			<!-- Footer Column two (social links) -->
+			<div class="colum2">
+				<h1>Social Links</h1>
+
+				<div class="row">
+					<a href="https://github.com/Henry-Azer" target="_blank"><img src="/images/footer/github.png" /></a>
+					<p>GitHub Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.linkedin.com/in/henry-azer-1220121a7/" target="_blank"><img
+							src="/images/footer/linkedIn.png" /></a>
+					<p>LinkedIn Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook Account</p>
+				</div>
+			</div>
+
+			<!-- Footer Column three (contact info) -->
+			<div class="colum3">
+				<h1>Contact</h1>
+
+				<div class="row2">
+					<a target="_blank"
+						href="https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594838,31.2234448,13z/data=!3m1!4b1!4m5!3m4!1s0x14583fa60b21beeb:0x79dfb296e8423bba!8m2!3d30.0444196!4d31.2357116"><img
+							src="images/footer/location.png" /></a>
+					<p>Cairo, Egypt</p>
+				</div>
+
+				<div class="row2">
+					<a href="mailto:henryazer@outlook.com" target="_blank"><img src="/images/footer/outlook.png" /></a>
+					<p>Outlook Account</p>
+				</div>
+
+
+				<div class="row2">
+					<a href="https://wa.me/201207885279" target="_blank"><img src="/images/footer/whatsApp.png"
+							class="whats-img" /></a>
+					<p>WhatsApp Account</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Container Footer -->
+		<div class="container-footer">
+			<div class="footer">
+				<div class="copyright">
+					Copyright ©2020 All rights reserved | <a>Developed By:
+						Henry-Azer</a>
+				</div>
+
+				<div class="information">
+					<a>Hotel Reservation</a> | <a>Programming Language Project</a> | <a>Dr.
+						Hatem Magdy</a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Reference Javascript and local files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<script th:src="@{scripts/parallax.min.js}"></script>
+	<script th:src="@{scripts/slick.min.js}"></script>
+	<script th:src="@{scripts/home.js}"></script>
+
+</body>
+
+</html>

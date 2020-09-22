@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Reference Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Reference Bootstrap and local files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" th:href="@{css/slick.css}">
+	<link rel="stylesheet" th:href="@{css/slick-theme.css}">
+	<link rel="stylesheet" th:href="@{css/reservation.css}">
+	<link rel="icon" th:href="@{images/header/white-logo.png}">
+
+	<title>Reservation</title>
+</head>
+
+<body>
+
+	<div class="main-overlay js-main-overlay"></div>
+
+	<!-- Main Cover Section -->
+	<section class="cover-main" id="home">
+		<header>
+			<nav class="nav-wrapper">
+				<div class="logo">
+					<a th:href="@{/}"> <img th:src="@{images/header/white-logo.png}" class="logo">
+					</a>
+				</div>
+
+				<!-- Menu bar -->
+				<ul class="menu">
+					<li><a href="#home">Reservations</a></li>
+					<li><a href="#book">Booking</a></li>
+					<li><a href="#footer">About Me</a></li>
+				</ul>
+			</nav>
+			<div class="menu-trigger js-menu-trigger"></div>
+		</header>
+
+		<!-- Main buttons and title -->
+		<div class="wrapper">
+			<ul id="scene" data-invert-x="false" data-invert-y="false" data-scalar-x="7" data-scalar-y="7"
+				data-friction-x="0.1" data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
+				<li class="layer name" data-depth="0.90">Reservations</li>
+				<li class="layer btn btn-main" data-depth="0.30"><a th:href="@{/your-reservations}" class="res-btn">Your
+						Reservations</a> <br> <a th:href="@{/}" class="back-btn">Back
+						Home</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Hotel Booking Section -->
+	<div class="container">
+		<h2 class="sub-title" id="book">Hotel Booking</h2>
+		<div class="hotel_reserve_box card">
+			<h3>Booking Form</h3>
+			<br>
+
+			<!-- Reservation form -->
+			<form id="resForm" name="resForm" th:action="@{/proceed-reservation}" th:object="${newRes}" method="POST">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				
+				<div class="form-group">
+				
+					<!-- Room Type -->
+					<input type="hidden" th:field="*{id}" /> <label>Room/SuiteType</label>
+					<select class="form-control prc" th:field="*{room}" id="room_type" required>
+						<option value="Single Deluxe">Single Deluxe</option>
+						<option value="Single Standard">Single Standard</option>
+						<option value="Double Deluxe">Double Deluxe</option>
+						<option value="Double Standard">Double Standard</option>
+						<option value="Family Deluxe">Family Deluxe</option>
+						<option value="Family Standard">Family Standard</option>
+						<option value="Honeymoon Suite">Honeymoon Suite</option>
+						<option value="Honeymoon Deluxe Suite">Honeymoon Deluxe
+							Suite</option>
+					</select>
+				</div>
+
+				<!-- Period of Stay -->
+				<div class="form-group">
+					<label>Period of Stay</label> <input class="form-control prc" id="stay-per" th:field="*{stayPeriod}"
+						placeholder="Days" pattern="^(?:[1-9]|[1-4][0-9]|50)$" type="number" required />
+				</div>
+
+				<!-- Number of Rooms -->
+				<div class="form-group">
+					<label>Number of room/suite</label> <input class="form-control prc" id="room_number"
+						th:field="*{rooms}" pattern="^(?:[1-9]|[1-4][0-9]|50)$" type="number" placeholder="Rooms"
+						required />
+				</div>
+
+				<!-- Number of Persons -->
+				<div class="form-group">
+					<label>Number of persons</label> <input class="form-control prc" id="person_number"
+						placeholder="Persons (+18)" type="number" pattern="^(?:[1-9]|[1-4][0-9]|50)$"
+						th:field="*{persons}" required />
+				</div>
+
+				<!-- Number of Children -->
+				<div class="form-group">
+					<label>Number of children</label> <input class="form-control prc" id="child_number"
+						placeholder="Children (+6)" type="number" pattern="^(?:[0-9]|[1-4][0-9]|50)$"
+						th:field="*{children}" required />
+				</div>
+
+				<!-- Restaurant Buffet -->
+				<div class="form-group">
+					<label>Restaurant Open Buffet</label> <select class="form-control prc" id="res_buffet"
+						th:field="*{openBuffet}" required>
+						<option value="YES">Yes</option>
+						<option value="NO">No</option>
+					</select>
+				</div>
+
+				<!-- Arrival Date -->
+				<div class="form-group">
+					<label>Visiting start from date </label> <br> <label class="date-label">Arrival Date:</label><input
+						th:field="*{arrivalDate}" type="date" id="dateTime_arr" name="dateTime" required />
+				</div>
+
+				<!-- hidden field to pass next live price value in this label to complete reservation -->
+				<div class="form-group">
+					<input type="hidden" id="priceField" value="" th:field="*{price}" />
+				</div>
+
+				<!-- Live price count -->
+				<div class="form-group">
+					<div class="price-lab">
+						TOTAL: <label><output class="price-fi" id="price-count"></output></label>$
+					</div>
+				</div>
+
+				<!-- submit form -->
+				<button class="sub-btn">Submit</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="main-footer">
+
+		<div class="container-body">
+
+			<!-- Footer Column one (information) -->
+			<div class="colum1">
+				<h1>About Me</h1>
+
+				<p>HENRY AZER</p>
+				<img class="me-image" alt="" src="/images/footer/me.jpg" />
+
+			</div>
+
+			<!-- Footer Column two (social links) -->
+			<div class="colum2">
+
+				<h1>Social Links</h1>
+
+				<div class="row">
+					<a href="https://github.com/Henry-Azer" target="_blank"><img src="/images/footer/github.png" /></a>
+					<p>GitHub Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.linkedin.com/in/henry-azer-1220121a7/" target="_blank"><img
+							src="/images/footer/linkedIn.png" /></a>
+					<p>LinkedIn Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook Account</p>
+				</div>
+
+			</div>
+
+			<!-- Footer Column three (contact info) -->
+			<div class="colum3">
+
+				<h1>Contact</h1>
+
+				<div class="row2">
+					<a target="_blank"
+						href="https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594838,31.2234448,13z/data=!3m1!4b1!4m5!3m4!1s0x14583fa60b21beeb:0x79dfb296e8423bba!8m2!3d30.0444196!4d31.2357116"><img
+							src="images/footer/location.png" /></a>
+					<p>Cairo, Egypt</p>
+				</div>
+
+
+				<div class="row2">
+					<a href="mailto:henryazer@outlook.com" target="_blank"><img src="/images/footer/outlook.png" /></a>
+					<p>Outlook Account</p>
+				</div>
+
+
+				<div class="row2">
+					<a href="https://wa.me/201207885279" target="_blank"><img src="/images/footer/whatsApp.png"
+							class="whats-img" /></a>
+					<p>WhatsApp Account</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Container Footer -->
+		<div class="container-footer">
+			<div class="footer">
+				<div class="copyright">
+					Copyright ©2020 All rights reserved | <a>Developed By:
+						Henry-Azer</a>
+				</div>
+
+				<div class="information">
+					<a>Hotel Reservation</a> | <a>Programming Language Project</a> | <a>Dr.
+						Hatem Magdy</a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Reference Javascript and local files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<script th:src="@{scripts/reservation.js}"></script>
+	<script th:src="@{scripts/cost.js}"></script>
+
+</body>
+
+</html>

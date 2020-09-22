@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- Reference Bootstrap and local files -->
+	<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="icon" th:href="@{images/header/white-logo.png}">
+	<link rel="stylesheet" th:href="@{css/login-page.css}">
+
+	<title>Hotel Login</title>
+</head>
+
+<body>
+
+	<!-- registration Form -->
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form id="regForm" name="regForm" th:action="@{/processRegistration}" th:object="${newUser}" method="POST">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				
+				<h1>Sign Up</h1>
+
+				<!-- Place for icons: social content ... -->
+				<div class="social-container">
+					<a href="https://github.com/Henry-Azer" target="_blank" class="social"><i
+							class="fab fa-github"></i></a> <a href="https://www.linkedin.com/in/henry-azer-1220121a7/"
+						target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
+					<a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank" class="social"><i
+							class="fab fa-facebook"></i></a>
+				</div>
+
+				<!-- messages: error, alert etc ... -->
+
+				<!-- Check for registration error -->
+				<div th:if="${registrationError}" class="alert alert-danger col-xs-offset-1 col-xs-10">
+					<span th:text="${registrationError}"></span>
+				</div>
+
+				<!-- Check for registration success -->
+				<div th:if="${registrationSuccess}" class="alert alert-success col-xs-offset-1 col-xs-10">
+					<span th:text="${registrationSuccess}"></span>
+				</div>
+
+				<span>Create new account</span>
+
+				<!-- Email -->
+				<input type="email" placeholder="Email" required th:field="*{email}"
+					pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" th:errorclass="fieldError" />
+
+				<div th:if="${#fields.hasErrors('email')}"
+					style="margin-bottom: 25px" class="text-danger">
+					<ul>
+						<li th:each="err : ${#fields.errors('email')}"
+							th:text="'Email :' + ${err}" />
+					</ul>
+				</div>
+				
+				<!-- User name -->
+				<input type="text" placeholder="Username" th:field="*{username}"
+					pattern="[A-Za-z0-9]{1,20}" th:errorclass="fieldError" required />
+
+				<div th:if="${#fields.hasErrors('username')}"
+					style="margin-bottom: 25px" class="text-danger">
+					<ul>
+						<li th:each="err : ${#fields.errors('n')}"
+							th:text="'User name :' + ${err}" />
+					</ul>
+				</div>
+
+				<!-- Password -->
+				<input id="password" name="password" type="password"
+					pattern="^\S{6,}$" placeholder="Password" required
+					th:field="*{password}" th:errorclass="fieldError"
+					onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.password_two.pattern = this.value;" />
+
+				<div th:if="${#fields.hasErrors('password')}"
+					style="margin-bottom: 25px" class="text-danger">
+					<ul>
+						<li th:each="err : ${#fields.errors('password')}"
+							th:text="'Password :' + ${err}" />
+					</ul>
+				</div>
+
+				<!-- Confirm Password -->
+				<input id="password_two" name="password_two" type="password"
+					pattern="^\S{6,}$" placeholder="Verify Password"
+					th:field="*{matchingPassword}" th:errorclass="fieldError" required
+					onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Password does not match :' :'' );" />
+
+				<div th:if="${#fields.hasErrors('matchingPassword')}"
+					style="margin-bottom: 25px" class="text-danger">
+					<ul>
+						<li th:each="err : ${#fields.errors('matchingPassword')}"
+							th:text="'Password Verify:' + ${err}" />
+					</ul>
+				</div>
+
+				<!-- sign up button submit -->
+				<br>
+				<button id="button" >Submit</button>
+			</form>
+		</div>
+
+
+		<!-- Login Form -->
+		<div class="form-container sign-in-container">
+			<form id="regForm" name="regForm" th:action="@{/process-login}"
+				method="POST">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+				
+				<h1>Sign In</h1>
+
+				<!-- Place for icons: social content ... -->
+				<div class="social-container">
+					<a href="https://github.com/Henry-Azer" target="_blank"
+						class="social"><i class="fab fa-github"></i></a> <a
+						href="https://www.linkedin.com/in/henry-azer-1220121a7/"
+						target="_blank" class="social"><i class="fab fa-linkedin"></i></a>
+					<a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank"
+						class="social"><i class="fab fa-facebook"></i></a>
+				</div>
+
+				<!-- Login Error -->
+				<div th:if="${param.error}"
+					class="alert alert-danger col-xs-offset-1 col-xs-10">Invalid
+					username and password.</div>
+
+				<!-- Logout notify -->
+				<div th:if="${param.logout}"
+					class="alert alert-success col-xs-offset-1 col-xs-10">You
+					have been logged out.</div>
+
+				<!-- Email  -->
+				<span>You have account? sign in now!</span> <input type="email"
+					placeholder="Email" name="username" required />
+
+				<!-- Password -->
+				<input type="password" placeholder="Password" name="password"
+					required /> <br>
+
+				<!-- sign in button submit -->
+				<button id="button">Submit</button>
+			</form>
+		</div>
+
+		<!-- switch overlay -->
+		<div class="overlay-container">
+			<div class="overlay">
+
+				<!-- sign in switch -->
+				<div class="overlay-panel overlay-left">
+					<h1>Have Account?</h1>
+					<p>SIGN IN NOW</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+
+				<!-- sign up switch -->
+				<div class="overlay-panel overlay-right">
+					<h1>Haven't Account?</h1>
+					<p>SIGN UP NOW</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Reference Javascript and local files -->
+	<script th:src="@{scripts/login-page.js}"></script>
+</body>
+
+</html>

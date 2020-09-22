@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Reference Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Reference Bootstrap and local files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<link rel="stylesheet" th:href="@{css/slick.css}">
+	<link rel="stylesheet" th:href="@{css/slick-theme.css}">
+	<link rel="stylesheet" th:href="@{css/your-reservations.css}">
+	<link rel="icon" th:href="@{images/header/white-logo.png}">
+
+	<title>Your Reservation</title>
+</head>
+
+<body>
+
+	<div class="main-overlay js-main-overlay"></div>
+
+	<!-- Main Cover Section -->
+	<section class="cover-main" id="home">
+		<header>
+			<nav class="nav-wrapper">
+				<div class="logo">
+					<a th:href="@{/}"> <img th:src="@{images/header/white-logo.png}" class="logo">
+					</a>
+				</div>
+
+				<!-- Menu bar -->
+				<ul class="menu">
+					<li><a href="#home">Your Reservations</a></li>
+					<li><a href="#user-res">Reservations list</a></li>
+					<li><a href="#footer">About Me</a></li>
+				</ul>
+			</nav>
+			<div class="menu-trigger js-menu-trigger"></div>
+		</header>
+
+		<!-- Main buttons and title -->		
+		<div class="wrapper">
+			<ul id="scene" data-invert-x="false" data-invert-y="false" data-scalar-x="7" data-scalar-y="7"
+				data-friction-x="0.1" data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
+				<li class="layer name" data-depth="0.90">Your Reservations</li>
+				<li class="layer btn btn-main" data-depth="0.30"><a th:href="@{/new-reservation}" class="res-btn">New
+						Reservation</a> <br>
+					<a th:href="@{/}" class="back-btn">Back Home</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Reservations Table Section -->
+	<section class="container">
+		<h2 class="sub-title" id="user-res">User Reservations</h2>
+		<h2 class="re-lis-h2">Reservation List</h2>
+
+		<table class="table table-bordered table-responsive-lg" id="res-table">
+			
+			<!-- thead Table elements -->
+			<thead class="thead-dark">
+				<tr>
+					<th>Res ID</th>
+					<th>Room</th>
+					<th>Rooms</th>
+					<th>Persons</th>
+					<th>Children</th>
+					<th>Open Buffet</th>
+					<th>Stay Period</th>
+					<th>Arrival Date</th>
+					<th>Total Price</th>
+					<th>Action</th>
+
+				</tr>
+			</thead>
+
+			<!-- loop in each reservation in list and fill table -->
+			<tbody>
+				<tr th:each=" tempRes : ${resList}">
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.id}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.room}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.rooms}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.persons}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.children}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.openBuffet}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.stayDays}" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.arrivalDate}"
+						id="arr_str" />
+					<td style="text-align: center; vertical-align: middle;" th:text="${tempRes.price}" />
+					<td>
+						<!-- Update and Delete buttons -->
+						<div class="rows">
+							<div class="col-small">
+								<form th:action="@{/reservation-update}" method="POST">
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								
+									<input type="hidden" name="resId" th:value="${tempRes.id}" />
+									<button type="submit" class="btn btn-info btn-lg">Update</button>
+								</form>
+							</div>
+
+							<div class="col-small">
+								<form th:action="@{/reservation-delete}" method="POST">
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+								
+									<input type="hidden" name="resId" th:value="${tempRes.id}" />
+									<button type="submit" class="btn btn-danger btn-lg"
+										onclick="if (!(confirm('Are you sure you want to delete this Reservation?'))) return false">
+										Delete</button>
+								</form>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer" class="main-footer">
+
+		<div class="container-body">
+
+			<!-- Footer Column one (information) -->
+			<div class="colum1">
+				<h1>About Me</h1>
+
+				<p>HENRY AZER</p>
+				<img class="me-image" alt="" src="/images/footer/me.jpg" />
+
+			</div>
+
+			<!-- Footer Column two (social links) -->
+			<div class="colum2">
+
+				<h1>Social Links</h1>
+
+				<div class="row">
+					<a href="https://github.com/Henry-Azer" target="_blank"><img src="/images/footer/github.png" /></a>
+					<p>GitHub Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.linkedin.com/in/henry-azer-1220121a7/" target="_blank"><img
+							src="/images/footer/linkedIn.png" /></a>
+					<p>LinkedIn Account</p>
+				</div>
+
+				<div class="row">
+					<a href="https://www.facebook.com/HeNaRyAzEr/" target="_blank"><img
+							src="/images/footer/facebook.png" /></a>
+					<p>Facebook Account</p>
+				</div>
+
+			</div>
+
+			<!-- Footer Column three (contact info) -->
+			<div class="colum3">
+
+				<h1>Contact</h1>
+
+				<div class="row2">
+					<a target="_blank"
+						href="https://www.google.com/maps/place/Cairo,+Cairo+Governorate/@30.0594838,31.2234448,13z/data=!3m1!4b1!4m5!3m4!1s0x14583fa60b21beeb:0x79dfb296e8423bba!8m2!3d30.0444196!4d31.2357116"><img
+							src="images/footer/location.png" /></a>
+					<p>Cairo, Egypt</p>
+				</div>
+
+
+				<div class="row2">
+					<a href="mailto:henryazer@outlook.com" target="_blank"><img src="/images/footer/outlook.png" /></a>
+					<p>Outlook Account</p>
+				</div>
+
+
+				<div class="row2">
+					<a href="https://wa.me/201207885279" target="_blank"><img src="/images/footer/whatsApp.png"
+							class="whats-img" /></a>
+					<p>WhatsApp Account</p>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Container Footer -->
+		<div class="container-footer">
+			<div class="footer">
+				<div class="copyright">
+					Copyright ©2020 All rights reserved | <a>Developed By:
+						Henry-Azer</a>
+				</div>
+
+				<div class="information">
+					<a>Hotel Reservation</a> | <a>Programming Language Project</a> | <a>Dr.
+						Hatem Magdy</a>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Reference Javascript and local files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	
+	<script th:src="@{scripts/reservation.js}"></script>
+
+</body>
+
+</html>
