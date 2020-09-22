@@ -737,8 +737,9 @@ section.slider-sec h2 {
 
 	.slide-item {
 		background: #ffffff;
-		width: 85%;
+		width: 80%;
 		height: 65vh;
+		-webkit-margin-start: 10px;
 	}
 
 	.main-footer {
