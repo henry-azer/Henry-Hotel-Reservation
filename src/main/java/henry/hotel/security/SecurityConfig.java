@@ -34,7 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/login-form-page").permitAll()
-		.antMatchers("/", "/new-reservation", "/your-reservations").hasAnyRole("EMPLOYEE")
 		.and()
 		.formLogin()
 			.loginPage("/login-form-page")
