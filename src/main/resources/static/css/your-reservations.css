@@ -509,7 +509,7 @@ td {
 
 	.cover-main {
 		width: 105%;
-		height: 50vh;
+		height: 60vh;
 	}
 
 	.main-footer {
@@ -711,6 +711,7 @@ td {
 }
 
 @media only screen and (max-width: 400px) {
+
 	.nav-wrapper {
 		width: 100%;
 	}
