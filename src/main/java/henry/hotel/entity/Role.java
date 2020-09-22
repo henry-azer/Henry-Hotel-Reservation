@@ -33,7 +33,7 @@ public class Role {
 	// Role getters and setters fields
 	
 	public Long getId() {
-		return id;
+		return 1;
 	}
 
 	public void setId(Long id) {
@@ -41,11 +41,11 @@ public class Role {
 	}
 
 	public String getName() {
-		return name;
+		return "ROLE_EMPLOYEE";
 	}
 
 	public void setName(String name) {
-		this.name = "EMPLOYEE";
+		this.name = "ROLE_EMPLOYEE";
 	}
 	
 	// override to string method to contain all fields
