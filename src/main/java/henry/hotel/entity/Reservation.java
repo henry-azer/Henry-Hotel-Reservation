@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "reservation")
+@Table(name = "`reservation`")
 public class Reservation {
 	
 	// reservation fields and annotate with it's column to connect to jpa entity manager
