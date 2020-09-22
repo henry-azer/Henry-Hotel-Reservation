@@ -537,6 +537,35 @@ h3 {
 		font-size: 13px;
 	}
 
+	.hotel_reserve_box.card {
+		text-align: left;
+		justify-content: center;
+		margin: 0;
+		padding: 15px;
+		width: 95%;
+		margin-bottom: 20%;
+		margin-left: 2.5%;
+	}
+
+	h3 {
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	.price-lab {
+		margin-left: 0px;
+		text-align: center;
+	}
+
+	.sub-btn {
+		margin-left: 40%;
+		margin-bottom: 8%;
+	}
+
+	#dateTime_arr {
+		margin-left: 22%;
+	}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -575,10 +604,44 @@ h3 {
 		font-size: 15px;
 	}
 
+	.hotel_reserve_box.card {
+		text-align: left;
+		justify-content: center;
+		margin: 0;
+		padding: 15px;
+		width: 95%;
+		margin-bottom: 20%;
+		margin-left: 2.5%;
+	}
+
+	h3 {
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	.price-lab {
+		margin-left: 0px;
+		text-align: center;
+	}
+
+	.sub-btn {
+		margin-left: 40%;
+		margin-bottom: 8%;
+	}
+
+	#dateTime_arr {
+		margin-left: 22%;
+	}
+
 }
 
 
 @media only screen and (max-width: 768px) {
+
+	.nav-wrapper {
+		width: 100%;
+	}
+
 	.menu-trigger {
 		background: url('../images/menu-icon.svg') no-repeat center/cover;
 		width: 35px;
@@ -759,6 +822,35 @@ h3 {
 		height: 60vh;
 	}
 
+	.hotel_reserve_box.card {
+		text-align: left;
+		justify-content: center;
+		margin: 0;
+		padding: 15px;
+		width: 95%;
+		margin-bottom: 20%;
+		margin-left: 2.5%;
+	}
+
+	h3 {
+		padding-left: 0px;
+		text-align: center;
+	}
+
+	.price-lab {
+		margin-left: 0px;
+		text-align: center;
+	}
+
+	.sub-btn {
+		margin-left: 27%;
+		margin-bottom: 8%;
+	}
+
+	#dateTime_arr {
+		margin-left: 22%;
+	}
+
 	.main-footer {
 		height: 140vh;
 	}
@@ -781,12 +873,20 @@ h3 {
 		width: 100%;
 	}
 
+	.cover-main {
+		height: 70vh;
+	}
+
 	.main-footer {
-		height: 175vh;
+		height: 180vh;
 	}
 
 	.container-body {
-		height: 175vh;
+		height: 180vh;
+	}
+
+	.container-footer {
+		height: 20vh;
 	}
 
 	.footer {
