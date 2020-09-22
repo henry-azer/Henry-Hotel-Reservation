@@ -37,7 +37,7 @@ public class Role {
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.id = (long) 1;
 	}
 
 	public String getName() {
@@ -45,7 +45,7 @@ public class Role {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = "EMPLOYEE";
 	}
 	
 	// override to string method to contain all fields
