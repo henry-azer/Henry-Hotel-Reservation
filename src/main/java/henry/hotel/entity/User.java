@@ -1,5 +1,6 @@
 package henry.hotel.entity;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -93,6 +94,9 @@ public class User {
 	}
 
 	public Collection<Role> getRoles() {
+		Collection<Role> roles = new ArrayList<>();
+		roles.add(new Role("EMPLOYEE"));
+		
 		return roles;
 	}
 
