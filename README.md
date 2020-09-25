@@ -4,7 +4,8 @@ Here is a host of this project to view and try it live on Heroku website:
 
 https://henry-hotel-reservation.herokuapp.com
 Limited free Database.
-username: henry@yahoo.com
+
+username: henry@yahoo.com , 
 password: henry0123
 
 Hotel Room Booking Management System,
