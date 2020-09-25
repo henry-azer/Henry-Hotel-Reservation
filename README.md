@@ -3,6 +3,7 @@ Project Deployment
 Here is a host of this project to view and try it live on Heroku website:
 
 https://henry-hotel-reservation.herokuapp.com
+
 Limited free Database.
 
 username: henry@yahoo.com , 
